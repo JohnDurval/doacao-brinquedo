@@ -169,16 +169,16 @@ header {
     position: relative;
     overflow: hidden;
     @media (max-width: 1050px) {
-        height: 650px;
+        height: 590px;
     }
     @media (max-width: 720px) {
-        height: 690px;
+        height: 590px;
     }
     @media (max-width: 520px) {
-        height: 670px;
+        height: 595px;
     }
     @media (max-width: 450px) {
-        height: 650px;
+        height: 595px;
     }
 }
 .hero1 {
@@ -339,9 +339,9 @@ header {
     }
     @media (max-width: 720px) {
         width: 340px;
-        left: 23%;
+        left: 20%;
         right: auto;
-        bottom: -10px;
+        bottom: -80px;
     }
     @media (max-width: 520px) {
         width: 330px;
