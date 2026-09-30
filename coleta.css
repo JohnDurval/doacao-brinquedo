@@ -1,0 +1,1340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #202020;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+}
+
+/* =========================
+   PÁGINA
+========================= */
+
+.pagina {
+    width: 100%;
+    max-width: 900px;
+    margin: 25px auto;
+    background: #fffaf2;
+    overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+    background-color: white;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.logo-header {
+    width: 180px;
+
+    @media(max-width: 880px) {
+        top: 0;
+    }
+
+}
+
+.headerContainer {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+
+    a {
+        font-size: 18px;
+        color: black;
+        font-weight: bold;
+
+        span {
+            color: #FFC400;
+        }
+
+        &:hover {
+            color: #FFC400;
+        }
+    }
+
+    @media (max-width: 880px) {
+        transform: translateY(-160%);
+        position: fixed;
+        top: 50px;
+        left: 15%;
+
+        background-color: white;
+
+        width: 70%;
+        height: 40vh;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 20px;
+
+        border: 1px solid gray;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    &.isOpen {
+        transform: translateX(0);
+        z-index: 7;
+    }
+}
+
+.hamburguer {
+    display: none;
+    border: 0;
+    background: transparent;
+
+    @media (max-width: 880px) {
+        display: flex;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        background-color: #FFC400;
+        border-radius: 12px;
+    }
+}
+
+.menuClose {
+    display: none;
+    border: 0;
+    background: transparent;
+
+    @media (max-width: 880px) {
+        display: flex;
+        align-self: flex-end;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        background-color: #FFC400;
+        border-radius: 8px;
+        padding: 8px;
+    }
+}
+
+.botao-doar {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: #FFC400;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        background-color: white;
+        border: solid 2px #FFC400;
+        color: #FFC400;
+    }
+
+    @media (max-width: 880px) {
+        display: none;
+    }
+}
+
+.topo {
+    height: 58px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.logo-icon {
+    width: 35px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #e40000;
+    background: #fff;
+    color: #003d91;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-8deg);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-text strong,
+.footer-logo strong {
+    color: #e00000;
+    font-size: 14px;
+}
+
+.logo-text small,
+.footer-logo small {
+    color: #003b87;
+    font-size: 5px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+nav a {
+    color: #111;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+nav a.ativo {
+    color: #d89a00;
+}
+
+nav .botao {
+    background: #f4c329;
+    padding: 9px 13px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 8px;
+}
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+    height: 265px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #06295d;
+}
+
+/* ÁREA AZUL */
+
+.texto-banner {
+    width: 40%;
+    height: 100%;
+    background: #06295d;
+    color: #fff;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    z-index: 5;
+
+    padding: 48px 15px 20px 38px;
+
+    /*
+    A borda arredondada cria a entrada
+    do mapa na parte direita.
+    */
+    border-radius: 0 0 110px 0;
+}
+
+/* ESTRELA */
+
+.estrela {
+    position: absolute;
+    top: 17px;
+    left: 13px;
+
+    font-size: 42px;
+    color: #f6c521;
+
+    text-shadow:
+        1px 2px 2px rgba(0, 0, 0, 0.5);
+
+    z-index: 10;
+}
+
+/* TEXTO DO BANNER */
+
+.texto-conteudo {
+    position: relative;
+    z-index: 10;
+}
+
+.texto-banner h1 {
+    font-size: 24px;
+    line-height: 1.08;
+    font-weight: 700;
+
+    margin: 10px 0 18px 0;
+}
+
+.texto-banner p {
+    font-size: 12px;
+    line-height: 1.35;
+
+    color: #fff;
+
+    max-width: 190px;
+}
+
+/* =========================
+   MAPA
+========================= */
+
+.mapa-container {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 75%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.mapa {
+    position: absolute;
+
+    /*
+    O contain evita que a imagem seja cortada.
+    */
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    /*
+    Mantém o lado esquerdo da imagem visível.
+    */
+    object-position: center center;
+
+    display: block;
+}
+
+/*
+    Pequeno ajuste para a imagem entrar
+    por baixo da área azul.
+*/
+.mapa-container::before {
+    content: "";
+
+    position: absolute;
+
+    left: -35px;
+    top: 0;
+
+    width: 70px;
+    height: 100%;
+
+    background: #06295d;
+
+    z-index: 2;
+
+    border-radius: 0 0 70px 0;
+}
+
+/* =========================
+   PONTOS COLORIDOS DO MAPA
+========================= */
+
+.ponto-mapa {
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    z-index: 10;
+
+    animation: pulsar 1.8s infinite ease-in-out;
+}
+
+/*
+    Anel externo da animação
+*/
+
+.ponto-mapa::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    animation: onda 1.8s infinite ease-out;
+}
+
+/*
+    Pontinho central
+*/
+
+.ponto-mapa span {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    left: 5px;
+    top: 5px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    z-index: 2;
+}
+
+/* VERDE */
+
+.ponto-verde {
+    left: 26%;
+    top: 38%;
+
+    background: #159447;
+
+    box-shadow:
+        0 0 0 4px rgba(21, 148, 71, 0.25),
+        0 0 15px rgba(21, 148, 71, 0.8);
+
+    animation-delay: 0s;
+}
+
+.ponto-verde::before {
+    border: 3px solid rgba(21, 148, 71, 0.45);
+}
+
+/* VERMELHO */
+
+.ponto-vermelho {
+    left: 48%;
+    top: 63%;
+
+    background: #e00000;
+
+    box-shadow:
+        0 0 0 4px rgba(224, 0, 0, 0.25),
+        0 0 15px rgba(224, 0, 0, 0.8);
+
+    animation-delay: .5s;
+}
+
+.ponto-vermelho::before {
+    border: 3px solid rgba(224, 0, 0, 0.45);
+}
+
+/* AZUL */
+
+.ponto-azul {
+    left: 64%;
+    top: 42%;
+
+    background: #1264d8;
+
+    box-shadow:
+        0 0 0 4px rgba(18, 100, 216, 0.25),
+        0 0 15px rgba(18, 100, 216, 0.8);
+
+    animation-delay: 1s;
+}
+
+.ponto-azul::before {
+    border: 3px solid rgba(18, 100, 216, 0.45);
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes pulsar {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes onda {
+
+    0% {
+        transform: scale(0.8);
+        opacity: 0.9;
+    }
+
+    70% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.conteudo {
+    min-height: 650px;
+
+    padding: 35px 95px 50px;
+
+    background: #fffaf2;
+}
+
+.conteudo h2 {
+    text-align: center;
+
+    color: #087a31;
+
+    font-size: 21px;
+
+    margin-bottom: 32px;
+}
+
+/* =========================
+   PONTOS DE COLETA
+========================= */
+
+.local {
+    width: 82%;
+    min-height: 95px;
+
+    background: #fff;
+
+    border: 2px solid #dedede;
+    border-radius: 8px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 70px;
+
+    padding: 10px 12px;
+
+    display: flex;
+    align-items: flex-start;
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.local:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.pin-local {
+    font-size: 36px;
+
+    line-height: 1;
+
+    margin-right: 5px;
+    margin-top: 0;
+
+    animation: pinPulse 2s infinite ease-in-out;
+}
+
+@keyframes pinPulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.dados {
+    flex: 1;
+    min-width: 0;
+}
+
+.dados h3 {
+    color: #122b9b;
+
+    font-size: 14px;
+
+    line-height: 1.2;
+
+    margin-bottom: 3px;
+}
+
+.dados p {
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.dados p span {
+    margin: 0 8px;
+
+    font-weight: bold;
+}
+
+.status {
+    color: #159447;
+
+    font-size: 10px;
+
+    display: block;
+
+    margin-top: 1px;
+}
+
+/* =========================
+   AVISO
+========================= */
+
+.aviso {
+    width: 82%;
+    min-height: 90px;
+
+    margin: 0 auto;
+
+    background: #ffe9c1;
+
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 25px;
+
+    color: #075091;
+}
+
+.presente {
+    font-size: 50px;
+
+    margin-right: 15px;
+}
+
+.aviso p {
+    font-size: 11px;
+
+    line-height: 1.35;
+}
+
+.aviso strong {
+    font-weight: bold;
+}
+
+/* =========================
+   DECORAÇÃO
+========================= */
+
+.decoracao {
+    height: 70px;
+
+    margin-top: -70px;
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 45px;
+
+    letter-spacing: -10px;
+
+    padding-left: 20px;
+
+    pointer-events: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+      width: 100%;
+    padding: 35px 30px;
+    background-color: #001A48;
+    color: white;
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            text-decoration: underline;
+            color: #FFC400;
+        }
+    }
+
+    @media (max-width: 1200px) {
+        padding: 32px 25px;
+    }
+
+    @media (max-width: 992px) {
+        padding: 30px 22px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 28px 20px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 25px 18px;
+    }
+
+    @media (max-width: 450px) {
+        padding: 25px 18px;
+    }
+}
+
+.rodape {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: start;
+    max-width: 1500px;
+    margin: 0 auto;
+    gap: 30px;
+
+    @media (max-width: 1200px) {
+        max-width: 1100px;
+        gap: 25px;
+    }
+
+    @media (max-width: 992px) {
+        grid-template-columns: 1.1fr 0.8fr 1.1fr;
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1.05fr 0.85fr 1.1fr;
+        gap: 15px;
+        justify-items: stretch;
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr 0.9fr 1.4fr;
+        gap: 5px;
+    }
+
+    @media (max-width: 450px) {
+        grid-template-columns: 1fr 0.9fr 1.55fr;
+        width: 100%;
+        gap: 0;
+    }
+}
+
+.marca-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    @media (max-width: 992px) {
+        gap: 14px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 13px;
+    }
+
+    @media (max-width: 600px) {
+        gap: 14px;
+        padding-right: 8px;
+    }
+
+    @media (max-width: 450px) {
+        gap: 17px;
+        padding-right: 10px;
+    }
+}
+
+.marca-rodape > img {
+    width: 200px;
+
+    @media (max-width: 1200px) {
+        width: 180px;
+    }
+
+    @media (max-width: 992px) {
+        width: 160px;
+    }
+
+    @media (max-width: 768px) {
+        width: 140px;
+    }
+
+    @media (max-width: 600px) {
+        width: 120px;
+    }
+
+    @media (max-width: 450px) {
+        width: 105px;
+    }
+}
+
+.marca-rodape p {
+    text-align: left;
+    width: 60%;
+    margin: 0;
+    line-height: 1.4;
+
+    @media (max-width: 1200px) {
+        width: 70%;
+        font-size: 15px;
+    }
+
+    @media (max-width: 992px) {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        width: 90%;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    @media (max-width: 450px) {
+        width: 100%;
+        font-size: 8px;
+        font-weight: 600;
+        line-height: 1.15;
+    }
+}
+
+.redes {
+    display: flex;
+    gap: 15px;
+
+    @media (max-width: 992px) {
+        gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 10px;
+    }
+
+    @media (max-width: 600px) {
+        gap: 8px;
+    }
+
+    @media (max-width: 450px) {
+        gap: 7px;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.redes img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+
+    @media (max-width: 1200px) {
+        width: 37px;
+        height: 37px;
+    }
+
+    @media (max-width: 992px) {
+        width: 34px;
+        height: 34px;
+    }
+
+    @media (max-width: 768px) {
+        width: 30px;
+        height: 30px;
+    }
+
+    @media (max-width: 600px) {
+        width: 26px;
+        height: 26px;
+    }
+
+    @media (max-width: 450px) {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+.navegacao-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    @media (max-width: 992px) {
+        gap: 13px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 11px;
+        padding-left: 15px;
+        border-left: 1px solid rgba(255, 255, 255, 0.7);
+        height: 100%;
+    }
+
+    @media (max-width: 600px) {
+        gap: 10px;
+        padding: 8px;
+    }
+
+    @media (max-width: 450px) {
+        gap: 9px;
+        padding: 10px 8px;
+        border-left: 1px solid white;
+        height: 100%;
+    }
+}
+
+.navegacao-rodape h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 23px;
+    margin: 0 0 10px 0;
+
+    @media (max-width: 1200px) {
+        font-size: 21px;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 19px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    @media (max-width: 450px) {
+        font-size: 12px;
+        margin: 0 0 2px 0;
+    }
+}
+
+.navegacao-rodape a {
+    font-size: 16px;
+
+    @media (max-width: 1200px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 11px;
+        line-height: 1.15;
+    }
+
+    @media (max-width: 450px) {
+        font-size: 10px;
+        line-height: 1.1;
+        white-space: nowrap;
+    }
+}
+
+.contato-rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+
+    @media (max-width: 992px) {
+        gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 11px;
+        padding-left: 15px;
+        border-left: 1px solid rgba(255, 255, 255, 0.7);
+        height: 100%;
+    }
+
+    @media (max-width: 600px) {
+        gap: 10px;
+        padding: 8px 0 8px 8px;
+    }
+
+    @media (max-width: 450px) {
+        gap: 10px;
+        padding: 10px 0 10px 8px;
+        border-left: 1px solid white;
+        height: 100%;
+    }
+}
+
+.contato-rodape h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 23px;
+    margin: 0 0 10px 0;
+
+    @media (max-width: 1200px) {
+        font-size: 21px;
+    }
+
+    @media (max-width: 992px) {
+        font-size: 19px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    @media (max-width: 450px) {
+        font-size: 12px;
+        margin: 0 0 2px 0;
+    }
+}
+
+.contato-rodape p {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.3;
+
+    @media (max-width: 1200px) {
+        width: 90%;
+        font-size: 15px;
+        gap: 7px;
+    }
+
+    @media (max-width: 992px) {
+        width: 100%;
+        font-size: 14px;
+        gap: 7px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+        line-height: 1.3;
+        gap: 6px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 10px;
+        line-height: 1.25;
+        gap: 5px;
+        align-items: flex-start;
+    }
+
+    @media (max-width: 450px) {
+        width: 100%;
+        margin: 0;
+        font-size: 9px;
+        line-height: 1.25;
+        gap: 6px;
+        align-items: flex-start;
+    }
+}
+
+.contato-rodape p img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+
+    @media (max-width: 1200px) {
+        width: 21px;
+        height: 21px;
+    }
+
+    @media (max-width: 992px) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (max-width: 768px) {
+        width: 18px;
+        height: 18px;
+    }
+
+    @media (max-width: 600px) {
+        width: 17px;
+        height: 17px;
+    }
+
+    @media (max-width: 450px) {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        background: #fffaf2;
+    }
+
+    .pagina {
+        margin: 0;
+
+        max-width: 100%;
+    }
+
+    .topo {
+        height: auto;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    /* BANNER MOBILE */
+
+    .banner {
+        height: 300px;
+    }
+
+    .texto-banner {
+        width: 58%;
+
+        height: 300px;
+
+        padding:
+            50px 10px 20px 25px;
+
+        border-radius:
+            0 0 80px 0;
+    }
+
+    .estrela {
+        top: 12px;
+        left: 8px;
+
+        font-size: 35px;
+    }
+
+    .texto-banner h1 {
+        font-size: 20px;
+
+        margin-bottom: 15px;
+    }
+
+    .texto-banner p {
+        font-size: 10px;
+
+        max-width: 150px;
+    }
+
+    .mapa-container {
+        width: 70%;
+
+        height: 300px;
+    }
+
+    .mapa {
+        object-fit: cover;
+
+        object-position: center center;
+    }
+
+    /* diminui os pontos no celular */
+
+    .ponto-mapa {
+        width: 13px;
+        height: 13px;
+    }
+
+    .ponto-mapa span {
+        width: 6px;
+        height: 6px;
+
+        left: 3.5px;
+        top: 3.5px;
+    }
+
+    /* CONTEÚDO */
+
+    .conteudo {
+        padding:
+            30px 20px 50px;
+    }
+
+    .conteudo h2 {
+        font-size: 16px;
+    }
+
+    .local {
+        width: 100%;
+
+        margin-bottom: 35px;
+
+        padding: 10px;
+    }
+
+    .pin-local {
+        font-size: 32px;
+    }
+
+    .dados h3 {
+        font-size: 12px;
+    }
+
+    .dados p,
+    .status {
+        font-size: 8px;
+    }
+
+    .dados p span {
+        margin: 0 4px;
+    }
+
+    .aviso {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .footer-logo {
+        width: 100%;
+    }
+}
+
+/* =========================
+   TELAS MUITO PEQUENAS
+========================= */
+
+@media (max-width: 430px) {
+
+    .texto-banner {
+        width: 60%;
+
+        padding-left: 20px;
+    }
+
+    .texto-banner h1 {
+        font-size: 18px;
+    }
+
+    .texto-banner p {
+        font-size: 9px;
+    }
+
+    .mapa-container {
+        width: 72%;
+    }
+
+    .ponto-mapa {
+        width: 11px;
+        height: 11px;
+    }
+
+    .ponto-mapa span {
+        width: 5px;
+        height: 5px;
+
+        left: 3px;
+        top: 3px;
+    }
+}
