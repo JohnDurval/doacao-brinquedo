@@ -363,11 +363,11 @@ header {
         left: 40px;
     }
     @media(max-width: 820px){
-        top: 78px;
+        top: 71px;
     }
     @media (max-width: 720px) {
         width: 50px;
-        top: 82px;
+        top: 71px;
         left: 18px;
     }
     @media (max-width: 402px) {
